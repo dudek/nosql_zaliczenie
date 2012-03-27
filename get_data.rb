@@ -1,14 +1,14 @@
 require 'net/http'
 require 'mongo'
 
-resp = String.new
+response = String.new
 all_raw_data_array = Array.new
 
 Net::HTTP.start("bash.org.pl") do |http|
-    resp = http.get("/text")
+    response = http.get("/text")
 end
 
-all_raw_data_array = resp.body.encode("UTF-8", {:undef => :replace}).split(/^%$/)
+all_raw_data_array = response.body.encode("UTF-8", {:undef => :replace}).split(/^%$/)
 
 @db = Mongo::Connection.new("localhost", 27017).db("nosql_zaliczenie")
 @collection = @db.collection("mnostwo_bashow")
