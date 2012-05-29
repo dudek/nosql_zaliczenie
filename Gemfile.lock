@@ -2,11 +2,20 @@ GEM
   remote: http://rubygems.org/
   specs:
     bson (1.6.2)
+    couchrest (1.1.2)
+      mime-types (~> 1.15)
+      multi_json (~> 1.0.0)
+      rest-client (~> 1.6.1)
+    mime-types (1.18)
     mongo (1.6.2)
       bson (~> 1.6.2)
+    multi_json (1.0.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  couchrest
   mongo
